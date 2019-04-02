@@ -47,31 +47,29 @@ struct NetworkManager {
         }
     }
     
-    func getAllCustomCollections(completion: @escaping (_ error: String?) -> Void) {
+    func getAllCustomCollections(completion: @escaping (_ collections: [CategoryModel]?, _ error: String?) -> Void) {
         shoplifyRouter.request(.customCollections) { (data, response, error) in
             if error != nil {
-                completion("Please check your network connection")
+                completion(nil, "Please check your network connection")
             }
             
             if let response = response as? HTTPURLResponse {
                 let result = self.handleNetworkResponse(response)
                 switch result {
                 case .success:
-                    guard let responseData  = data else { completion(NetworkReponse.noData.rawValue); return }
+                    guard let responseData = data else { completion(nil, NetworkReponse.noData.rawValue); return }
                     
                     do {
-                        let apiResponse = try JSONSerialization.jsonObject(with: responseData, options: [])
-                        print(apiResponse)
+                        let apiResponse = try JSONDecoder().decode(Collections.self, from: responseData)
+                        completion(apiResponse.customCollections, nil)
                     } catch {
-                        completion(NetworkReponse.unableToDecode.rawValue)
+                        completion(nil, NetworkReponse.unableToDecode.rawValue)
                     }
                     
                 case .failure(let networkFailureError):
-                    completion(networkFailureError)
-                    
+                    completion(nil, networkFailureError)
                 }
             }
         }
     }
-    
 }

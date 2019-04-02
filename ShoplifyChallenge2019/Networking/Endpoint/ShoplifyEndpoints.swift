@@ -32,7 +32,7 @@ extension ShoplifyAPI: EndPointType {
     var path: String {
         switch self {
         case .customCollections:
-            return "/custom_collection.json"
+            return "/custom_collections.json"
         }
     }
     
@@ -43,7 +43,9 @@ extension ShoplifyAPI: EndPointType {
     var task: HTTPTask {
         switch self {
         case .customCollections:
-            return .requestParameter(bodyParameters: nil, urlParameters: ["page" : 1, "access_token" : NetworkManager.ShoplifyAPIKey ])
+            return .requestParameter(bodyParameters: nil,
+                                     urlParameters: ["page" : 1,
+                                                     "access_token" : NetworkManager.ShoplifyAPIKey ])
         }
     }
     var headers: HTTPHeaders? {

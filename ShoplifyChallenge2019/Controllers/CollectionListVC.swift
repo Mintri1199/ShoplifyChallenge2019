@@ -17,9 +17,13 @@ class CollectionListVC: UICollectionViewController {
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
-        NetworkManager().getAllCustomCollections { (error) in
+        NetworkManager().getAllCustomCollections { (collections, error ) in
             if let error = error {
                 print(error)
+            }
+            
+            if let collections = collections {
+                print(collections)
             }
         }
     }
@@ -30,7 +34,6 @@ class CollectionListVC: UICollectionViewController {
         // #warning Incomplete implementation, return the number of sections
         return 0
     }
-    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
