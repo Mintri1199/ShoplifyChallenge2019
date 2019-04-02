@@ -20,6 +20,8 @@ struct NetworkManager {
     
     static let environment: NetworkEnvironment = .production
     
+    private let shoplifyRouter = Router<ShoplifyAPI>()
+    
     enum NetworkReponse: String {
         case success
         case authenticationError = "You need to be authenticated first."
@@ -44,4 +46,32 @@ struct NetworkManager {
         default: return .failure(NetworkReponse.failed.rawValue)
         }
     }
+    
+    func getAllCustomCollections(completion: @escaping (_ error: String?) -> Void) {
+        shoplifyRouter.request(.customCollections) { (data, response, error) in
+            if error != nil {
+                completion("Please check your network connection")
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                let result = self.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData  = data else { completion(NetworkReponse.noData.rawValue); return }
+                    
+                    do {
+                        let apiResponse = try JSONSerialization.jsonObject(with: responseData, options: [])
+                        print(apiResponse)
+                    } catch {
+                        completion(NetworkReponse.unableToDecode.rawValue)
+                    }
+                    
+                case .failure(let networkFailureError):
+                    completion(networkFailureError)
+                    
+                }
+            }
+        }
+    }
+    
 }

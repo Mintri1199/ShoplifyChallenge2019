@@ -16,6 +16,12 @@ class CollectionListVC: UICollectionViewController {
         
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        NetworkManager().getAllCustomCollections { (error) in
+            if let error = error {
+                print(error)
+            }
+        }
     }
     
     // MARK: UICollectionViewDataSource
