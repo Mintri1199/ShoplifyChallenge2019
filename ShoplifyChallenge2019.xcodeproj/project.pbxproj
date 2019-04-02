@@ -21,6 +21,13 @@
 		44D5A7402252EE29000611F9 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A73F2252EE29000611F9 /* ParameterEncoding.swift */; };
 		44D5A7422252EE48000611F9 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A7412252EE48000611F9 /* URLParameterEncoder.swift */; };
 		44D5A7442252EEEC000611F9 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A7432252EEEC000611F9 /* JSONParameterEncoder.swift */; };
+		44D5A7462252EF4F000611F9 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A7452252EF4F000611F9 /* HTTPMethod.swift */; };
+		44D5A7482252EF62000611F9 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A7472252EF62000611F9 /* HTTPTask.swift */; };
+		44D5A74A2252EF7F000611F9 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A7492252EF7F000611F9 /* NetworkRouter.swift */; };
+		44D5A74C2252EF92000611F9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A74B2252EF92000611F9 /* Router.swift */; };
+		44D5A74E2252EFC3000611F9 /* EndPointTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A74D2252EFC3000611F9 /* EndPointTypeProtocol.swift */; };
+		44D5A7502252EFE0000611F9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A74F2252EFE0000611F9 /* NetworkManager.swift */; };
+		44D5A7522252F04B000611F9 /* ShoplifyEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D5A7512252F04B000611F9 /* ShoplifyEndpoints.swift */; };
 		8BB4E234EC1446BACCF69E5C /* Pods_ShoplifyChallenge2019.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C84B8E88ECF41B4F26140930 /* Pods_ShoplifyChallenge2019.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +48,13 @@
 		44D5A73F2252EE29000611F9 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		44D5A7412252EE48000611F9 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		44D5A7432252EEEC000611F9 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		44D5A7452252EF4F000611F9 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		44D5A7472252EF62000611F9 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		44D5A7492252EF7F000611F9 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		44D5A74B2252EF92000611F9 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		44D5A74D2252EFC3000611F9 /* EndPointTypeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointTypeProtocol.swift; sourceTree = "<group>"; };
+		44D5A74F2252EFE0000611F9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		44D5A7512252F04B000611F9 /* ShoplifyEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoplifyEndpoints.swift; sourceTree = "<group>"; };
 		505CD28F94D8BA4EE84B4012 /* Pods-ShoplifyChallenge2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoplifyChallenge2019.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoplifyChallenge2019/Pods-ShoplifyChallenge2019.release.xcconfig"; sourceTree = "<group>"; };
 		6E114656FC41E5DFE615D712 /* Pods-ShoplifyChallenge2019.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoplifyChallenge2019.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoplifyChallenge2019/Pods-ShoplifyChallenge2019.debug.xcconfig"; sourceTree = "<group>"; };
 		C84B8E88ECF41B4F26140930 /* Pods_ShoplifyChallenge2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoplifyChallenge2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,9 +146,9 @@
 		44D5A72D2252EA04000611F9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				44D5A73E2252EE01000611F9 /* Endpoint */,
-				44D5A73D2252EDE5000611F9 /* Encoding */,
 				44D5A73C2252EDDD000611F9 /* Service */,
+				44D5A73D2252EDE5000611F9 /* Encoding */,
+				44D5A73E2252EE01000611F9 /* Endpoint */,
 				44D5A73B2252EDD1000611F9 /*  Manager */,
 			);
 			path = Networking;
@@ -143,6 +157,7 @@
 		44D5A73B2252EDD1000611F9 /*  Manager */ = {
 			isa = PBXGroup;
 			children = (
+				44D5A74F2252EFE0000611F9 /* NetworkManager.swift */,
 			);
 			path = " Manager";
 			sourceTree = "<group>";
@@ -150,6 +165,10 @@
 		44D5A73C2252EDDD000611F9 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				44D5A7452252EF4F000611F9 /* HTTPMethod.swift */,
+				44D5A7472252EF62000611F9 /* HTTPTask.swift */,
+				44D5A7492252EF7F000611F9 /* NetworkRouter.swift */,
+				44D5A74B2252EF92000611F9 /* Router.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -157,6 +176,9 @@
 		44D5A73D2252EDE5000611F9 /* Encoding */ = {
 			isa = PBXGroup;
 			children = (
+				44D5A73F2252EE29000611F9 /* ParameterEncoding.swift */,
+				44D5A7412252EE48000611F9 /* URLParameterEncoder.swift */,
+				44D5A7432252EEEC000611F9 /* JSONParameterEncoder.swift */,
 			);
 			path = Encoding;
 			sourceTree = "<group>";
@@ -164,9 +186,8 @@
 		44D5A73E2252EE01000611F9 /* Endpoint */ = {
 			isa = PBXGroup;
 			children = (
-				44D5A73F2252EE29000611F9 /* ParameterEncoding.swift */,
-				44D5A7412252EE48000611F9 /* URLParameterEncoder.swift */,
-				44D5A7432252EEEC000611F9 /* JSONParameterEncoder.swift */,
+				44D5A74D2252EFC3000611F9 /* EndPointTypeProtocol.swift */,
+				44D5A7512252F04B000611F9 /* ShoplifyEndpoints.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -293,16 +314,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44D5A7502252EFE0000611F9 /* NetworkManager.swift in Sources */,
+				44D5A7482252EF62000611F9 /* HTTPTask.swift in Sources */,
 				44D5A7192252D54C000611F9 /* CollectionListVC.swift in Sources */,
+				44D5A74A2252EF7F000611F9 /* NetworkRouter.swift in Sources */,
 				44D5A7422252EE48000611F9 /* URLParameterEncoder.swift in Sources */,
 				44D5A7292252D62D000611F9 /* DetailCollectionVC.swift in Sources */,
 				44D5A7402252EE29000611F9 /* ParameterEncoding.swift in Sources */,
 				44D5A7312252EA38000611F9 /* Product.swift in Sources */,
 				44D5A7332252EA7C000611F9 /* CategoriesCell.swift in Sources */,
+				44D5A7522252F04B000611F9 /* ShoplifyEndpoints.swift in Sources */,
+				44D5A74C2252EF92000611F9 /* Router.swift in Sources */,
 				44D5A7172252D54C000611F9 /* AppDelegate.swift in Sources */,
 				44D5A7372252EAB2000611F9 /* CategoriesLayout.swift in Sources */,
+				44D5A74E2252EFC3000611F9 /* EndPointTypeProtocol.swift in Sources */,
 				44D5A7442252EEEC000611F9 /* JSONParameterEncoder.swift in Sources */,
 				44D5A7392252EABD000611F9 /* ProductLayout.swift in Sources */,
+				44D5A7462252EF4F000611F9 /* HTTPMethod.swift in Sources */,
 				44D5A7352252EA9B000611F9 /* ProductCell.swift in Sources */,
 				44D5A72F2252EA28000611F9 /* CategoriesModel.swift in Sources */,
 			);
